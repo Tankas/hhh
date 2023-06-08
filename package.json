@@ -2,10 +2,10 @@
   "name": "hhh",
   "version": "1.0.0",
   "description": "基于ts 开发脚手架",
-  "main": "./src/index.ts",
+  "main": "./index.js",
   "type": "module",
   "bin": {
-    "hhh": "./src/index.ts"
+    "hhh": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

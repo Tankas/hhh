@@ -2,7 +2,7 @@
  * @Author: tanka 
  * @Date: 2023-06-06 20:27:48
  * @LastEditors: tanka 
- * @LastEditTime: 2023-06-07 17:21:15
+ * @LastEditTime: 2023-06-08 16:09:36
  * @FilePath: /hhh/src/core/task/init/generateCode.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -32,8 +32,6 @@ class generateCode implements TaskInterface{
     
     const spinner = ora('正在生成工程中...\n');
     spinner.start();
-    console.log('projectDir', projectDir);
-    console.log('projectMetaInfo', projectMetaInfo)
     
     // 移动模版文件至项目目录
     await new Promise((resolve) => {
@@ -55,8 +53,7 @@ class generateCode implements TaskInterface{
               if (err) {
                   console.error('模版渲染失败')
               }
-              //
-              console.log('清空临时文件夹', initTemplateDirPath)
+              // 清空临时文件夹
               fs.emptyDirSync(initTemplateDirPath);
               resolve(true);
           });

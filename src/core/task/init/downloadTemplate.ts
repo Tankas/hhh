@@ -1,8 +1,5 @@
-
 import TaskInterface from './interface/task'
 import GlobalData from './globalData'
-
-
 import path from 'path';
 import fs from 'fs-extra'
 import ora from 'ora';
@@ -24,7 +21,6 @@ class DownloadTemplate implements TaskInterface {
     const spinner = ora('开始下载模版...').start();
     try {
         const tmpDirPath = path.resolve(projectDir, '.nobook/tmp/init');
-        console.log('临时目录', tmpDirPath);
         fs.ensureDirSync(tmpDirPath);
 
         await git.clone(templateInfo.ssh_url_to_repo, tmpDirPath);
