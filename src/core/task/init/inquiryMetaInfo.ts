@@ -2,7 +2,7 @@
  * @Author: tanka 
  * @Date: 2023-06-06 19:42:00
  * @LastEditors: tanka 
- * @LastEditTime: 2023-06-06 20:27:04
+ * @LastEditTime: 2023-06-08 11:01:02
  * @FilePath: /hhh/src/core/task/init/inquiryMetaInfo.ts
  * @Description: 询问项目元信息
  */
@@ -10,6 +10,9 @@ import TaskInterface from './interface/task'
 import GlobalData from './globalData'
 import path from 'path';
 import inquirer from 'inquirer';
+// esmodule 里面 使用 common.js
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url);
 
 
 class inquiryMetaInfo implements TaskInterface{
@@ -23,17 +26,16 @@ class inquiryMetaInfo implements TaskInterface{
     )
 
     //获取模版相关的问题
-    // const templateMeta = require(path.resolve(
-    //     path.resolve(process.cwd(), projectDirName, '.nobook/tmp/init'),
-    //     'meta.js',
-    // ));
+    const templateMeta = require(path.resolve(
+        path.resolve(process.cwd(), projectDirName, '.nobook/tmp/init'),
+        'meta.js',
+    ));
 
-    const templateMeta = await import('./meta.js');
-    console.log(templateMeta.default.questions);
 
-    const { questions } = templateMeta.default
+    const { questions } = templateMeta
 
     if (!questions) {
+      console.log('请在根目录配置 meta.js');
       return
     }
 

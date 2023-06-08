@@ -2,7 +2,7 @@
  * @Author: tanka 
  * @Date: 2023-06-06 20:27:48
  * @LastEditors: tanka 
- * @LastEditTime: 2023-06-07 16:55:21
+ * @LastEditTime: 2023-06-07 17:21:15
  * @FilePath: /hhh/src/core/task/init/generateCode.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,11 +14,8 @@ import Metalsmith from 'metalsmith'
 import path from 'path';
 import ora from 'ora';
 import fs from 'fs-extra'
-
 import { templateRenderer } from '../../utils/templateRender'
 
-
-console.log('渲染模版');
 
 
 class generateCode implements TaskInterface{
@@ -61,7 +58,7 @@ class generateCode implements TaskInterface{
               //
               console.log('清空临时文件夹', initTemplateDirPath)
               fs.emptyDirSync(initTemplateDirPath);
-              resolve(1);
+              resolve(true);
           });
     });
   }
