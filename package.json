@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Tankas/hhh#readme",
   "dependencies": {
+    "@types/inquirer": "^9.0.3",
     "@types/node": "^20.2.5",
     "@types/yargs": "^17.0.24",
     "ascii-art-font": "^1.0.2",
