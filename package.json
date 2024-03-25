@@ -1,6 +1,6 @@
 {
   "name": "hhh",
-  "version": "1.1.5",
+  "version": "1.1.5-hotfix",
   "description": "基于ts 开发脚手架1.1.5-hotfix",
   "main": "./index.js",
   "type": "module",
